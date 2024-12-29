@@ -3,12 +3,12 @@
 import React from "react";
 import questions from "../Data/questions";
 
-const Quiz = () => {
+const Quiz = ({ currentQuestion }) => {
   return (
     <>
-      <div className="question-text">{questions[0].question}</div>
+      <div className="question-text">{questions[currentQuestion].question}</div>
       <div className="answer-section">
-        {questions[0].options.map((option, index) => {
+        {questions[currentQuestion].options.map((option, index) => {
           return <button key={index}>{option}</button>;
         })}
       </div>

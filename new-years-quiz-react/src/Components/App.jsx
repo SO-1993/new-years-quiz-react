@@ -9,7 +9,7 @@ import "../../src/App.css";
 
 const App = () => {
   const [quizState, setQuizState] = useState("notStarted");
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
 
@@ -22,7 +22,7 @@ const App = () => {
     );
   }
   if (quizState === "inProgress") {
-    return <Quiz />;
+    return <Quiz currentQuestion={currentQuestion} />;
   }
   if (quizState === "completed") {
     return <Result />;
