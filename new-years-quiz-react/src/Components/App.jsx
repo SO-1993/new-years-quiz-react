@@ -11,15 +11,21 @@ const App = () => {
   const [quizState, setQuizState] = useState("notStarted");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const [showScore, setShowScore] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
 
-  const handleAnswerButtonClick = (option) => {
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      alert("You have reached the end of the quiz!");
-      setQuizState("completed");
+  const handleAnswerButtonClick = (selectedOption) => {
+    if (selectedOption === questions[currentQuestion].correctAnswer) {
+      setScore(score + 1);
+    }
+    {
+      const nextQuestion = currentQuestion + 1;
+      if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+      } else {
+        setShowScore(true);
+        setQuizState("completed");
+      }
     }
   };
 
