@@ -13,6 +13,11 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
 
+  const handleAnswerButtonClick = (option) => {
+    const nextQuestion = currentQuestion + 1;
+    setCurrentQuestion(nextQuestion);
+  };
+
   if (quizState === "notStarted") {
     return (
       <div>
@@ -22,7 +27,12 @@ const App = () => {
     );
   }
   if (quizState === "inProgress") {
-    return <Quiz currentQuestion={currentQuestion} />;
+    return (
+      <Quiz
+        currentQuestion={currentQuestion}
+        handleAnswerButtonClick={handleAnswerButtonClick}
+      />
+    );
   }
   if (quizState === "completed") {
     return <Result />;
