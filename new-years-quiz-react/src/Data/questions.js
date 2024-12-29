@@ -1,4 +1,4 @@
-export const questions = [
+const questions = [
   {
     id: 1,
     question: "What is the capital of France?",
@@ -140,3 +140,5 @@ export const questions = [
     correctAnswer: "Diamond",
   },
 ];
+
+export default questions;
