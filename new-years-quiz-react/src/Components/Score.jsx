@@ -4,8 +4,10 @@ import React from "react";
 
 const Score = ({ score, totalQuestions }) => {
   return (
-    <div>
-      You have scored {score} out of {totalQuestions}!
+    <div className="score-section">
+      <h1>
+        You scored {score} out of {totalQuestions}
+      </h1>
     </div>
   );
 };
