@@ -3,7 +3,7 @@
 import React from "react";
 
 const Result = () => {
-  return <div>Your result is displayed here!</div>;
+  // return <Result />;
 };
 
 export default Result;

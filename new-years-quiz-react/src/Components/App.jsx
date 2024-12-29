@@ -14,13 +14,15 @@ const App = () => {
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
 
+  const totalQuestions = questions.length;
+
   const handleAnswerButtonClick = (selectedOption) => {
     if (selectedOption === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
     }
     {
       const nextQuestion = currentQuestion + 1;
-      if (nextQuestion < questions.length) {
+      if (nextQuestion < totalQuestions) {
         setCurrentQuestion(nextQuestion);
       } else {
         setShowScore(true);
@@ -46,7 +48,7 @@ const App = () => {
     );
   }
   if (quizState === "completed") {
-    return <Result />;
+    return <Score score={score} totalQuestions={totalQuestions} />;
   }
 };
 

@@ -2,8 +2,12 @@
 
 import React from "react";
 
-const Score = () => {
-  return <div>Your score is displayed here!</div>;
+const Score = ({ score, totalQuestions }) => {
+  return (
+    <div>
+      You have scored {score} out of {totalQuestions}!
+    </div>
+  );
 };
 
 export default Score;
