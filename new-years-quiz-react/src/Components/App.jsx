@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import questions from "../Data/questions";
-import Question from "../Components/Question";
 import Quiz from "../Components/Quiz";
 import Score from "../Components/Score";
 import Timer from "../Components/Timer";
