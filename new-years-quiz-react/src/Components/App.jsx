@@ -4,6 +4,7 @@ import Quiz from "../Components/Quiz";
 import Score from "../Components/Score";
 import Timer from "../Components/Timer";
 import "../../src/App.css";
+import Button from "@mui/material/Button";
 
 const App = () => {
   const [quizState, setQuizState] = useState("notStarted");
@@ -30,7 +31,10 @@ const App = () => {
     return (
       <div>
         <h1>Welcome to the Quiz!</h1>
-        <button onClick={() => setQuizState("inProgress")}>Start Quiz</button>
+        {/* <button onClick={() => setQuizState("inProgress")}>Start Quiz</button> */}
+        <Button variant="contained" onClick={() => setQuizState("inProgress")}>
+          Start Quiz
+        </Button>
       </div>
     );
   }
