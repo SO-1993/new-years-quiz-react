@@ -1,11 +1,23 @@
 import React from "react";
+import { useState } from "react";
+
 import questions from "../Data/questions";
+import Timer from "./Timer";
 
 const Quiz = ({ currentQuestion, handleAnswerButtonClick }) => {
   const question = questions[currentQuestion];
 
+  const [timerExpired, setTimerExpired] = useState(false);
+
+  const handleTimerExpired = () => {
+    setTimerExpired(true);
+    handleAnswerButtonClick(null);
+  };
+
   return (
     <div className="quiz-section">
+      <Timer initialTime={3} onTimeUp={handleTimerExpired} />
+
       <div className="question-text">{question.question}</div>
       <div className="answer-section">
         {question.options.map((option, index) => (
