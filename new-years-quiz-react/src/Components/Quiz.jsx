@@ -12,11 +12,16 @@ const Quiz = ({ currentQuestion, handleAnswerButtonClick }) => {
   const handleTimerExpired = () => {
     setTimerExpired(true);
     handleAnswerButtonClick(null);
+    setTimerExpired(false);
   };
 
   return (
     <div className="quiz-section">
-      <Timer initialTime={3} onTimeUp={handleTimerExpired} />
+      <Timer
+        key={currentQuestion}
+        initialTime={3}
+        onTimeUp={handleTimerExpired}
+      />
 
       <div className="question-text">{question.question}</div>
       <div className="answer-section">
