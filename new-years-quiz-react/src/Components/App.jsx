@@ -27,6 +27,13 @@ const App = () => {
     }
   };
 
+  const resetQuiz = () => {
+    setQuizState("notStarted");
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+  };
+
   if (quizState === "notStarted") {
     return (
       <div>
@@ -37,19 +44,27 @@ const App = () => {
         </Button>
       </div>
     );
-  }
-
-  if (quizState === "inProgress") {
+  } else if (quizState === "inProgress") {
     return (
       <Quiz
         currentQuestion={currentQuestion}
         handleAnswerButtonClick={handleAnswerButtonClick}
       />
     );
-  }
-
-  if (quizState === "completed") {
-    return <Score score={score} totalQuestions={questions.length} />;
+  } else if (quizState === "completed") {
+    return (
+      <>
+        <Score score={score} totalQuestions={questions.length} />
+        <Button
+          variant="contained"
+          onClick={() => {
+            resetQuiz();
+          }}
+        >
+          Return to Homepage
+        </Button>
+      </>
+    );
   }
 
   return null;
