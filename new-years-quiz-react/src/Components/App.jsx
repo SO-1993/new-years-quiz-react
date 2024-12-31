@@ -38,10 +38,12 @@ const App = () => {
     return (
       <div>
         <h1>Welcome to the Quiz!</h1>
-        {/* <button onClick={() => setQuizState("inProgress")}>Start Quiz</button> */}
-        <Button variant="contained" onClick={() => setQuizState("inProgress")}>
+        <button
+          className="start-quiz-button"
+          onClick={() => setQuizState("inProgress")}
+        >
           Start Quiz
-        </Button>
+        </button>
       </div>
     );
   } else if (quizState === "inProgress") {
