@@ -57,14 +57,12 @@ const App = () => {
     return (
       <>
         <Score score={score} totalQuestions={questions.length} />
-        <Button
-          variant="contained"
-          onClick={() => {
-            resetQuiz();
-          }}
+        <button
+          className="restart-quiz-button"
+          onClick={() => setQuizState("inProgress")}
         >
-          Return to Homepage
-        </Button>
+          Restart Quiz
+        </button>
       </>
     );
   }

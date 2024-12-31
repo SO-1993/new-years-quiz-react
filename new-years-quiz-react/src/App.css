@@ -12,7 +12,8 @@ h2 {
   color: #ffd700;
 }
 
-.start-quiz-button {
+.start-quiz-button,
+.restart-quiz-button {
   display: flex;
   align-items: center;
   justify-content: center;
