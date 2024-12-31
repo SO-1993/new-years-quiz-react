@@ -19,7 +19,7 @@ const Quiz = ({ currentQuestion, handleAnswerButtonClick }) => {
     <div className="quiz-section">
       <Timer
         key={currentQuestion}
-        initialTime={3}
+        initialTime={30}
         onTimeUp={handleTimerExpired}
       />
 
